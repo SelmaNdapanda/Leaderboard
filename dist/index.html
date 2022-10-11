@@ -5,26 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
-    <link rel="stylesheet" href="style.css">
 <script defer src="main.js"></script></head>
 <body>
-    <div><h1 class="awesomeBooks">All awesome Books</h1></div>
-
-    <div class="books">
-        
+    <div>
+        <h1 class="leaderboard">Leaderboard</h1>
     </div>
-
-    <form class="bookForm">
-        <h2 class="form-heading">Add a new book</h2>
-        <input type="text" name="title" class="title" id="title" placeholder="Title">
-        <br>
-        <br>
-        <input type="text" id="author" name="author" class="author" placeholder="Author">
-        <br>
-        <br>
-        <div class="btn">
-        <button type="submit" class="add"> Add</button>
+    
+    <section>
+        <div class="recent-scores">
+            <h2 class="title recent-title">Recent scores</h2>
+            <button type="button" class="btn refresh-btn" onClick="window.location.reload();"> Refresh</button>
+            <table class="table-container">
+                <thead>
+                    <tr>
+                        <th> Name </th>
+                        <th> Score </th>
+                    </tr>
+                </thead>
+                <tbody id="list-score"></tbody>
+            </table>
         </div>
-    </form>
+        
+        <div class="add-score">
+            <h2 class="title form-title">Add your score</h2>
+            <form id="add-form">
+                <input type="text" name="name" class="name" id="name" placeholder="Your name">
+                <br>
+                <br>
+                <input type="text" id="score" name="score" class="score" placeholder="Your score">
+                <br>
+                <br>
+                <button type="submit" class="btn submit-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+    <script src="index.js" type="module"></script>
 </body>
 </html>
