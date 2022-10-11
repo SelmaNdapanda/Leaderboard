@@ -1,12 +1,40 @@
-import _ from 'lodash';
+import Scores from './modules/scores.js';
+import Store from './modules/storage.js';
 
-function component() {
-    const element = document.createElement('div');
-  
-      // Lodash, now imported by this script
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  
-    return element;
+class task {
+  static currentScores() {
+    const scores = Store.getScores();
+    scores.forEach((board) => task.addScoreList(board));
   }
-  
-  document.body.appendChild(component());
+
+  static addScoreList(board) {
+    const list = document.querySelector('#list-score');
+    const row = document.createElement('tr');
+    row.innerHTML = `<td>${board.name}</td>
+    <td>${board.score}</td>`;
+    list.appendChild(row);
+  }
+
+  static clearField() {
+    document.querySelector('#name').value = '';
+    document.querySelector('#score').value = '';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', task.currentScores);
+document.querySelector('#add-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const name = document.querySelector('#name').value;
+  const score = document.querySelector('#score').value;
+
+  if (name === '' || score === '') {
+    task.showAlert('Please fill in all fields');
+  } else {
+    const board = new Scores(name, score);
+
+    task.addScoreList(board);
+    Store.addScore(board);
+    task.clearField();
+  }
+});
