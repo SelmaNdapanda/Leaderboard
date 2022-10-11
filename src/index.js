@@ -1,5 +1,6 @@
 import Scores from './modules/scores.js';
 import Store from './modules/storage.js';
+import './style.css';
 
 class task {
   static currentScores() {

@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+  }
+  
+  .recent-scores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
