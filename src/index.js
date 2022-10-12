@@ -1,41 +1,22 @@
-import Scores from './modules/scores.js';
-import Store from './modules/storage.js';
+import { fetchData } from './modules/scoreboard';
+import addScoreToList from './modules/add.js';
 import './style.css';
 
-class task {
-  static currentScores() {
-    const scores = Store.getScores();
-    scores.forEach((board) => task.addScoreList(board));
-  }
+const submitForm = document.querySelector('#add-form');
+const playerScore = document.querySelector('#score');
+const playerName = document.querySelector('#name');
+const refresh = document.querySelector('#refresh');
 
-  static addScoreList(board) {
-    const list = document.querySelector('#list-score');
-    const row = document.createElement('tr');
-    row.innerHTML = `<td>${board.name}</td>
-    <td>${board.score}</td>`;
-    list.appendChild(row);
-  }
-
-  static clearField() {
-    document.querySelector('#name').value = '';
-    document.querySelector('#score').value = '';
-  }
-}
-
-document.addEventListener('DOMContentLoaded', task.currentScores);
-document.querySelector('#add-form').addEventListener('submit', (e) => {
+submitForm.addEventListener('submit', (e) => {
   e.preventDefault();
-
-  const name = document.querySelector('#name').value;
-  const score = document.querySelector('#score').value;
-
-  if (name === '' || score === '') {
-    task.showAlert('Please fill in all fields');
-  } else {
-    const board = new Scores(name, score);
-
-    task.addScoreList(board);
-    Store.addScore(board);
-    task.clearField();
-  }
+  addScoreToList(playerName.value, playerScore.value);
+  submitForm.reset();
 });
+
+refresh.addEventListener('click', () => {
+  fetchData();
+});
+
+window.onload = () => {
+  fetchData();
+};
