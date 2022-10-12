@@ -13,8 +13,10 @@
     
     <section>
         <div class="recent-scores">
-            <h2 class="title recent-title">Recent scores</h2>
-            <button type="button" class="btn refresh-btn" onClick="window.location.reload();"> Refresh</button>
+            <div class="score-list-title">
+                <h2 class="title recent-title">Recent scores</h2>
+                <button type="button" class="btn refresh-btn" onClick="window.location.reload();"> Refresh</button>
+            </div>
             <table class="table-container">
                 <thead>
                     <tr>
@@ -32,10 +34,10 @@
                 <input type="text" name="name" class="name" id="name" placeholder="Your name">
                 <br>
                 <br>
-                <input type="text" id="score" name="score" class="score" placeholder="Your score">
+                <input type="number" id="score" name="score" class="score" placeholder="Your score">
                 <br>
                 <br>
-                <button type="submit" class="btn submit-btn">Submit</button>
+                <input type="submit" value="Submit" class="btn submit-btn">
             </form>
         </div>
     </section>
