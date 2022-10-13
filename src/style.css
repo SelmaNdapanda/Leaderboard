@@ -28,7 +28,7 @@ section {
 }
 
 .title {
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .recent-scores {
@@ -39,14 +39,13 @@ section {
   margin-right: 4rem;
 }
 
-.score-list-title { 
+.score-list-title {
   display: flex;
   flex-direction: row;
-  
-} 
+}
 
 .btn {
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   float: right;
   padding: 5px;
@@ -61,7 +60,7 @@ section {
 }
 
 input {
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 14px;
   border: 3px solid black;
@@ -73,7 +72,7 @@ input {
 }
 
 .Scores {
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: bold;
   padding: 0.5rem;
@@ -89,18 +88,12 @@ input {
   background-color: #eee;
 }
 
-.submitForm {
-  align-self: center;
-  padding: 5%;
-}
-
 .list-score > li:nth-child(odd) {
-  background-color: #fff;  
+  background-color: #fff;
 }
 
 @media screen and (min-width: 768px) {
- .score-list-title {
+  .score-list-title {
     gap: 17rem;
   }
 }
-
