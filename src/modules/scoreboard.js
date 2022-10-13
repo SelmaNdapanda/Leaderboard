@@ -7,12 +7,12 @@ export const display = (scores) => {
     leaderboard.innerHTML = '<li>No Scores to be displayed</li>';
   }
   scores.sort((a, b) => b.score - a.score).forEach((score) => {
-    leaderboard.innerHTML += ` <li class="Scores">${score.user}  ${score.score}</li>`;
+    leaderboard.innerHTML += ` <li class="Scores">${score.user}: ${score.score}</li>`;
   });
 };
 
 export const fetchData = async () => {
-  await fetch(url)
-    .then((response) => response.json())
-    .then((json) => display(json.result));
+  const response = await fetch(url);
+  const data = await response.json();
+  display(data.result);
 };

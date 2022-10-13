@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
   box-sizing: border-box;
   padding: 0;
@@ -5,7 +7,9 @@ body {
 }
 
 h1 {
-  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 4rem;
+  margin-left: 2rem;
 }
 
 section {
@@ -23,19 +27,73 @@ section {
   align-items: center;
 }
 
+.title {
+  font-family: 'Roboto', sans-serif;
+}
+
+.recent-scores {
+  margin-left: 4rem;
+}
+
+.add-score {
+  margin-right: 4rem;
+}
+
 .score-list-title {
   display: flex;
   flex-direction: row;
 }
 
 .btn {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
   float: right;
+  padding: 5px;
+  box-shadow: #1c1c1c 2px 2px;
+  border: 3px solid black;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.row:nth-child(even) {
+#refresh {
+  margin-top: 1rem;
+}
+
+input {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  border: 3px solid black;
+}
+
+.list-score {
+  width: 70%;
+  border: 3px solid black;
+}
+
+.Scores {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0.5rem;
+  list-style-type: none;
+}
+
+.submitForm {
+  align-self: center;
+  padding: 5%;
+}
+
+.list-score > li:nth-child(even) {
+  background-color: #eee;
+}
+
+.list-score > li:nth-child(odd) {
   background-color: #fff;
 }
 
-.row:nth-child(odd) {
-  background-color: #eee;
+@media screen and (min-width: 768px) {
+  .score-list-title {
+    gap: 17rem;
+  }
 }
