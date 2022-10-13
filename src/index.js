@@ -1,4 +1,4 @@
-import { fetchData } from './modules/scoreboard';
+import { fetchData } from './modules/scoreboard.js';
 import addScoreToList from './modules/add.js';
 import './style.css';
 
