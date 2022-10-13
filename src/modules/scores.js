@@ -1,6 +1,7 @@
 export default class Scores {
-  constructor(name, score) {
-    this.name = name;
-    this.score = score;
+  constructor(userName, points) {
+    userName = this.userName;
+    // eslint-disable-next-line no-unused-vars
+    points = this.points;
   }
 }
