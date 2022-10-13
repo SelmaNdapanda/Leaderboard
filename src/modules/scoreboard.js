@@ -12,7 +12,7 @@ export const display = (scores) => {
 };
 
 export const fetchData = async () => {
-  await fetch(url)
-    .then((response) => response.json())
-    .then((json) => display(json.result));
+  const response = await fetch(url);
+  const data = await response.json();
+  display(data.result);
 };
